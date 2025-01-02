@@ -21,6 +21,13 @@ app.use('/api/v1/albums', albumRoutes);
 app.use('/api/v1/tracks', trackRoutes);
 app.use('/api/v1/favorites', favoriteRoutes);
 
+
+// Default route for the root URL
+app.get('/', (req, res) => {
+  res.status(200).send('Welcome to the Music Library Management API');
+});
+
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
